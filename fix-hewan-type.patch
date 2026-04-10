@@ -1,0 +1,22 @@
+--- a/src/app/(protected)/cetak-dokumen/page.tsx
++++ b/src/app/(protected)/cetak-dokumen/page.tsx
+@@
++import { Tables } from "@/integrations/supabase/types";
++
++type Hewan = Tables<"hewan_qurban">;
+@@
+-const { data: hewan, isLoading: loadingDetail } = useQuery({
++const { data: hewan, isLoading: loadingDetail } = useQuery<Hewan>({
+   queryKey: ["hewan-detail-cetak", selectedHewanId],
+   queryFn: async () => {
+     const { data, error } = await supabase
+       .from("hewan_qurban")
+       .select("*")
+       .eq("id", selectedHewanId)
+       .single();
+     if (error) throw error;
+-    return data;
++    return data as Hewan;
+   },
+   enabled: !!selectedHewanId,
+});

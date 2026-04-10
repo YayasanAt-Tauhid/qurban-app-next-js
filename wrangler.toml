@@ -1,0 +1,11 @@
+name = "qurban-1447"
+main = ".open-next/worker.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+assets = { directory = ".open-next/assets", binding = "ASSETS" }
+
+[vars]
+# Tambahkan environment variables di Cloudflare dashboard
+NEXT_PUBLIC_SUPABASE_URL = "https://mssttmcyqblphkvvtdlf.supabase.co"
+NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1zc3R0bWN5cWJscGhrdnZ0ZGxmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzMjgxMDUsImV4cCI6MjA5MDkwNDEwNX0.D7nQpEjzdcpoh9QOLiGw99aaYD8te379N-UW1zzJQW4"
